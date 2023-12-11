@@ -1,0 +1,7 @@
+1. pedir uma entrada de 1 a 8.
+2. caso a entrada não cumprir com os requisitos pedir novamente.
+3. caso cumprir começar o codigo.
+4.  1-conta para construir a piramede
+    2-construir piramede
+    3-construir piramede a direita
+    3-print piramede
