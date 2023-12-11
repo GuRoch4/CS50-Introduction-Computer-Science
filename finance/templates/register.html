@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            <div id="password-feedback" class="invalid-feedback"></div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm Password" type="password">
+            <div id="confirmation-feedback" class="invalid-feedback"></div>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <script>
+        document.getElementById('password').addEventListener('input', function() {
+            var password = this.value;
+
+            var passwordFeedback = document.getElementById('password-feedback');
+            if (password.length < 5) {
+                passwordFeedback.textContent = 'password must be at least 5 characters long, one uppercase letter & one special character.';
+                passwordFeedback.style.display = 'block';
+            } else {
+                passwordFeedback.style.display = 'none';
+            }
+        });
+
+        document.getElementById('confirmation').addEventListener('input', function() {
+            var password = document.getElementById('password').value;
+            var confirmation = this.value;
+
+            var confirmationFeedback = document.getElementById('confirmation-feedback');
+            if (password !== confirmation) {
+                confirmationFeedback.textContent = 'Passwords must be the same.';
+                confirmationFeedback.style.display = 'block';
+            } else {
+                confirmationFeedback.style.display = 'none';
+            }
+        });
+    </script>
+
+{% endblock %}
