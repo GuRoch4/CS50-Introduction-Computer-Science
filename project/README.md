@@ -1,6 +1,5 @@
 # CS50 Learning English
 
-#### Video Demo: https://youtu.be/bSsop_yFjrQ
 
 #### Description:
 
